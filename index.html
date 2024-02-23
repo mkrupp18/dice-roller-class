@@ -34,14 +34,15 @@
         
         <p class="large-font">This website is a dice rollar for the game Yahtzee, click the roll button, then watch as <br>
                 your numbers appear!</p>
-        <button class ="big button" onclick="handleClick()">Roll dice</button>
+            <button id="rollBtn" class="big button">Roll dice</button>
+            <p id="result"></p>
         
         
         <script>
             const rollBtn = document.getElementById('rollBtn');
-        const resultElem = document.getElementById('result');
+            const resultElem = document.getElementById('result');
 
-        rollBtn.addEventListener('click', async () => {
+        rollBtn.addEventListener("click", async () => {
             try {
                 const response = await fetch('https://test-dice-roller-mk.azurewebsites.net/');
                 const data = await response.json();
